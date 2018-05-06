@@ -50,12 +50,7 @@ const utils = (function() {
   };
 
   /**
-<<<<<<< HEAD
    * @desc Include all files in a folder
-=======
-   * Include all files in a folder
-   * path param must end with '/' - probably should change this
->>>>>>> parent of 4210efe... Code tidy, added badges
    * @param  {string} folder folder to include
    */
   const includeAll = path => {

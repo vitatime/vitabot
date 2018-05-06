@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Vitabot
 
 [![Build Status](https://travis-ci.org/vitatime/vitabot.svg?branch=develop)](https://travis-ci.org/vitatime/vitabot) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/vitatime/vitabot/issues)
@@ -38,6 +37,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 ## Acknowledgments
 
 TODO
-=======
-Add a README.. m8
->>>>>>> parent of 4210efe... Code tidy, added badges
