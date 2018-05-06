@@ -1,0 +1,5 @@
+{
+  "channelToJoin": ["profiles", "that", "will", "join", "test1"],
+  "differentChannel": ["more", "profiles", "that", "will", "join"],
+  "vitabot": ["test"]
+}

@@ -1,0 +1,17 @@
+/**
+ * Created on 6/10/2017.
+ * @author vita
+ * @desc script that gets loaded on game join
+ */
+
+js_strict(true);
+
+// scripts must be included in order
+include('src/json2.js');
+include('src/util.js');
+include('src/polyfill.js');
+include('src/proto.js');
+
+function main() {
+  util.delay(me.ping);
+}

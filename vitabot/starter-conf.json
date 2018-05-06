@@ -1,0 +1,20 @@
+{
+  "connectingTimeout": 8,
+  "utcRetry": 3,
+  "utcDelay": 180,
+  "createGameDelay": 3,
+  "minGame": 120,
+  "pingQuitDelay": 30,
+
+  "followSettings": {
+    "test3": ["test1", "follow2"],
+    "test2": ["follow3", "follow4", "test1"]
+  },
+
+  "otherMultiplayer": {
+    "hosts": [],
+    "joins": {
+      "test2": "test1"
+    }
+  }
+}

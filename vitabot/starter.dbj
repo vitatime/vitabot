@@ -1,0 +1,86 @@
+/**
+ * Created on 4/5/2018.
+ * @author vita
+ * @desc testing/dev starter
+ */
+
+js_strict(true);
+
+// There is a proper ordering here..
+include('external/json2.js');
+include('external/polyfill.js');
+include('src/utils.js');
+include('external/d2bot.js');
+
+utils.includeAll('src/oog/constants/');
+// won't need to include all in here
+// it will probably eventually contain mostly ingame stuff
+utils.includeAll('src/constants/');
+
+include('src/fileSystem.js');
+include('src/events.js');
+
+include('src/oog/utils.js');
+include('src/oog/manager.js');
+include('src/oog/baseEvent.js');
+
+include('src/oog/actions/base.js');
+include('src/oog/actions/leader.js');
+
+function main() {
+  debugLog(me.profile);
+
+  if (!FileTools.exists('data/' + me.profile + '.json')) {
+    DataFile.create();
+  }
+
+  // TODO:
+  // This could probably be abstracted away
+  // This is going to be common across all different starters
+  const profile = (() => {
+    let state = {
+      handle: false,
+      gameUp: false,
+      starter: fileSystem.read('starter-conf.json'),
+      channel: fileSystem.read('channel-conf.json'),
+    };
+
+    return Object.assign(
+      state,
+      {
+        actions: baseOogActions(state),
+      },
+      {
+        events: events(state),
+      },
+      {
+        manager: oogManager(state),
+      }
+    );
+  })();
+
+  // Leader starter - assign leader actions
+  Object.assign(profile.actions, leaderOogActions(profile));
+
+  addEventListener(COPYDATA, (mode, data) => {
+    baseCopyData(profile, mode, data);
+    profile.events.execute(COPYDATA, mode, data);
+  });
+
+  profile.manager.init();
+
+  while (true) {
+    while (me.ingame) {
+      if (me.gameReady) {
+        profile.manager.inGameLoop();
+      }
+
+      delay(1000);
+    }
+
+    profile.manager.action();
+    delay(50);
+  }
+
+  return true;
+}

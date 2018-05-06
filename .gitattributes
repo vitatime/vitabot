@@ -1,0 +1,2 @@
+vitabot/sdk/* linguist-vendored
+*.dbj linguist-language=Javascript

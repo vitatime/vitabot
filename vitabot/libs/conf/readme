@@ -1,0 +1,4 @@
+configs will need to be .js not json so I can use constant variables
+being js will also make them harder to manipulate on the fly
+
+consider these..

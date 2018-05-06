@@ -1,0 +1,7 @@
+/**
+ * Created on 6/10/2017.
+ * @author vita
+ * @desc script that gets loaded when d2bs is injected
+ */
+
+js_strict(true);
